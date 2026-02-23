@@ -45,35 +45,31 @@ class AdmissionController extends AppController
 
 
                 if (empty($students)) {
-                    $this->Flash->error('Form already submitted.');
-                } else {
-                    $this->set('stu', $students[0]);
-                }
-            } else {
-
-                $request_data = $this->request->getData();
-                // echo '<pre>';
-                // print_r($request_data);
-                // die;
-                $file = $request_data['photo'];
-                $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
-                $arr_ext = array('jpg', 'jpeg', 'png'); //set allowed extensions
-                $setNewFileName = time() . "_" . rand(000000, 999999);
-
-                $thumbnailFileName = null;
-                $regularSizeFileName = null;
-
-                if (in_array($ext, $arr_ext)) {
-                    // Move uploaded file to original folder
-                    $originalFolderPath = WWW_ROOT . '/uploads/students/large_version/'; // Specify original folder path
-                    if (!file_exists($originalFolderPath)) {
-                        mkdir($originalFolderPath, 0777, true);
+  
                     }
                     $originalImagePath = $originalFolderPath . $setNewFileName . '.' . $ext;
                     move_uploaded_file($file['tmp_name'], $originalImagePath);
 
                     // Open original image file
-                    $image = null;
+                    $image = null;      'type' => 'LEFT',
+                    'conditions' => [
+                        'student_cycle.student_id = scms_students.student_id '
+                    ]
+                ]
+            ])
+            ->where(['sid' => $session_sid])
+            ->first();
+        if ($student_session && isset($student_session['student_cycle_id'])) {
+            $session_scid = $student_session['student_cycle_id'];
+        } else {
+            // Handle the error: student session not found or key missing
+            $session_scid = null; // or set an appropriate default or error handling
+        }
+        return $session_scid;
+    }
+
+
+
                     if ($ext == 'jpg' || $ext == 'jpeg') {
                         $image = imagecreatefromjpeg($originalImagePath);
                     } else if (
