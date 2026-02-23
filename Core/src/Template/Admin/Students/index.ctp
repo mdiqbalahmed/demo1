@@ -37,7 +37,7 @@ $religions = [
     'Christian' => 'Christian',
     'Buddhist' => 'Buddhist'
 ]
-    ?>
+?>
 <!doctype html>
 <html lang="en">
 
@@ -70,11 +70,11 @@ $religions = [
                                     </div>
                                     <div class="col-lg-9 row2Field">
                                         <select class="form-control" name="session_id" id="session_id" required>
-                                        <option value=""><?= __d('students', '-- Choose --') ?></option>
+                                            <option value=""><?= __d('students', '-- Choose --') ?></option>
                                             <?php foreach ($sessions as $session) { ?>
                                                 <option value="<?php echo $session['session_id']; ?>" <?php if ($data['session_id'] == $session['session_id']) {
-                                                       echo 'Selected';
-                                                   } ?>><?php echo $session['session_name']; ?> </option>
+                                                                                                            echo 'Selected';
+                                                                                                        } ?>><?php echo $session['session_name']; ?> </option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -88,13 +88,13 @@ $religions = [
 
                                     <div class="col-lg-9 row2Field">
                                         <select class="form-control" name="shift_id" id="shift_id" <?php echo $required; ?>>
-                                        <?php if (!$required) { ?>
-        <option value=""><?= __d('students', '-- Choose --') ?></option>
-    <?php } ?>
+                                            <?php if (!$required) { ?>
+                                                <option value=""><?= __d('students', '-- Choose --') ?></option>
+                                            <?php } ?>
                                             <?php foreach ($shifts as $shift) { ?>
                                                 <option value="<?php echo $shift['shift_id']; ?>" <?php if ($data['shift_id'] == $shift['shift_id']) {
-                                                       echo 'Selected';
-                                                   } ?>><?php echo $shift['shift_name']; ?> </option>
+                                                                                                        echo 'Selected';
+                                                                                                    } ?>><?php echo $shift['shift_name']; ?> </option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -108,13 +108,13 @@ $religions = [
 
                                     <div class="col-lg-9 row2Field">
                                         <select class="form-control" name="level_id" id="level_id" <?php echo $required; ?>>
-                                        <?php if (!$required) { ?>
-        <option value=""><?= __d('students', '-- Choose --') ?></option>
-    <?php } ?>
+                                            <?php if (!$required) { ?>
+                                                <option value=""><?= __d('students', '-- Choose --') ?></option>
+                                            <?php } ?>
                                             <?php foreach ($levels as $level) { ?>
                                                 <option value="<?php echo $level['level_id']; ?>" <?php if ($data['level_id'] == $level['level_id']) {
-                                                       echo 'Selected';
-                                                   } ?>><?php echo $level['level_name']; ?>
+                                                                                                        echo 'Selected';
+                                                                                                    } ?>><?php echo $level['level_name']; ?>
                                                 </option>
                                             <?php } ?>
                                         </select>
@@ -130,17 +130,17 @@ $religions = [
                                         <p class="label-font13"><?= __d('students', 'Section') ?></p>
                                     </div>
                                     <div class="col-lg-9 row2Field">
-                                    <select class="form-control" name="section_id" id="section_id" <?php echo $required; ?>>
-    <?php if (!$required) { ?>
-        <option value=""><?= __d('students', '-- Choose --') ?></option>
-    <?php } ?>
-    <?php foreach ($sections as $section) { ?>
-        <option value="<?php echo $section['section_id']; ?>" 
-            <?php echo (isset($data['section_id']) && $data['section_id'] == $section['section_id']) ? 'selected' : ''; ?>>
-            <?php echo $section['section_name']; ?>
-        </option>
-    <?php } ?>
-</select>
+                                        <select class="form-control" name="section_id" id="section_id" <?php echo $required; ?>>
+                                            <?php if (!$required) { ?>
+                                                <option value=""><?= __d('students', '-- Choose --') ?></option>
+                                            <?php } ?>
+                                            <?php foreach ($sections as $section) { ?>
+                                                <option value="<?php echo $section['section_id']; ?>"
+                                                    <?php echo (isset($data['section_id']) && $data['section_id'] == $section['section_id']) ? 'selected' : ''; ?>>
+                                                    <?php echo $section['section_name']; ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
 
                                     </div>
                                 </div>
@@ -153,8 +153,8 @@ $religions = [
                                     <div class="col-lg-9 row2Field">
                                         <input name="sid" type="text" class="form-control" placeholder="SID"
                                             value="<?php if (isset($data['sid'])) {
-                                                echo $data['sid'];
-                                            } ?>">
+                                                        echo $data['sid'];
+                                                    } ?>">
                                     </div>
 
                                 </div>
@@ -169,8 +169,8 @@ $religions = [
                                             <option value=""><?= __d('students', '-- Choose --') ?></option>
                                             <?php foreach ($statuses as $status) { ?>
                                                 <option value="<?php echo $status['status_id']; ?>" <?php if ($data['status'] == $status['status_id']) {
-                                                       echo 'Selected';
-                                                   } ?>><?php echo $status['status_name']; ?> </option>
+                                                                                                        echo 'Selected';
+                                                                                                    } ?>><?php echo $status['status_name']; ?> </option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -188,8 +188,8 @@ $religions = [
                                     <div class="col-lg-9 row2Field">
                                         <input name="name" type="text" class="form-control" placeholder="Name"
                                             value="<?php if (isset($data['name'])) {
-                                                echo $data['name'];
-                                            } ?>">
+                                                        echo $data['name'];
+                                                    } ?>">
                                     </div>
 
                                 </div>
@@ -203,8 +203,8 @@ $religions = [
                                     <div class="col-lg-9 row2Field">
                                         <input name="roll" type="text" class="form-control"
                                             value="<?php if (isset($data['roll'])) {
-                                                echo $data['roll'];
-                                            } ?>">
+                                                        echo $data['roll'];
+                                                    } ?>">
                                     </div>
 
                                 </div>
@@ -220,8 +220,8 @@ $religions = [
                                             <option value=""><?= __d('students', '-- Choose --') ?></option>
                                             <?php foreach ($religions as $key => $religion) { ?>
                                                 <option value="<?php echo $key; ?>" <?php if (!empty($data['religion']) && $data['religion'] == $key) {
-                                                       echo 'selected';
-                                                   } ?>><?php echo $religion; ?></option>
+                                                                                        echo 'selected';
+                                                                                    } ?>><?php echo $religion; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -252,12 +252,12 @@ $religions = [
                     <div class="rows">
                         <div class="flexButton mb-3">
                             <?php //for student data export purpose 27/01/2024
-                                $this->Form->unlockField('session_id');
-                                $this->Form->unlockField('level_id');
-                                $this->Form->unlockField('shift_id');
-                                $this->Form->unlockField('section_id');
-                                $this->Form->unlockField('status');
-                                ?>
+                            $this->Form->unlockField('session_id');
+                            $this->Form->unlockField('level_id');
+                            $this->Form->unlockField('shift_id');
+                            $this->Form->unlockField('section_id');
+                            $this->Form->unlockField('status');
+                            ?>
                             <?php echo $this->Form->create('Export Data', ['type' => 'file', 'url' => ['action' => 'export']]); ?>
                             <input type="hidden" name="session_id"
                                 value="<?php echo isset($where['scms_student_cycle.session_id']) ? $where['scms_student_cycle.session_id'] : ''; ?>">
@@ -301,7 +301,7 @@ $religions = [
                         <tbody>
                             <?php
                             foreach ($students as $student) {
-                                ?>
+                            ?>
                                 <tr>
                                     <td style="display: grid; grid-auto-flow: column; gap: 10px;">
                                         <?= $this->Html->link('<i class="fa fa-pencil"></i>', ['action' => 'edit', $student['student_id']], ['class' => 'btn action-btn btn-warning', 'escape' => false, 'target' => '_blank']) ?>
@@ -317,16 +317,17 @@ $religions = [
                                     <td><?php echo $student['roll'] ?></td>
                                     <td><?php echo $student['active_guardian'] ?></td>
                                     <td><?php
-                                    if ($student['resedential'] == 1) {
-                                        echo 'Resident';
-                                    } else {
-                                        echo 'Non-Resident';
-                                    } ?>
+                                        if ($student['resedential'] == 1) {
+                                            echo 'Resident';
+                                        } else {
+                                            echo 'Non-Resident';
+                                        } ?>
                                     <td><?php echo $student['gender'] ?></td>
                                     <td><?php echo $student['blood_group'] ?></td>
                                     <td><?php echo $student['religion_subject'] ?></td>
                                     <td><?php echo $student['present_address'] ?></td>
-                                    <!--<td><?php //echo $student['mobile'] ?></td>-->
+                                    <!--<td><?php //echo $student['mobile'] 
+                                            ?></td>-->
                                     <td><?php echo $student['guardians'][strtolower($student['active_guardian'])]['mobile'] ?>
                                     </td>
                                     <td><?php echo $student['group_name'] ?></td>
@@ -334,10 +335,10 @@ $religions = [
                                     <td><?php echo $student['forth_subject_name'] ?></td>
                                     <td><?php echo $student['date_of_birth'] ?></td>
                                     <td><?php if ($student['status']) {
-                                        echo 'Active';
-                                    } else {
-                                        echo 'Inactive';
-                                    } ?></td>
+                                            echo 'Active';
+                                        } else {
+                                            echo 'Inactive';
+                                        } ?></td>
                                     <td style="display: grid; grid-auto-flow: column; gap: 10px;">
                                         <?= $this->Html->link('<i class="fa fa-pencil"></i>', ['action' => 'edit', $student['student_id']], ['class' => 'btn action-btn btn-warning', 'escape' => false, 'target' => '_blank']) ?>
                                         <?= $this->Html->link('<i class="fa fa-print"></i>', ['action' => 'print', $student['student_id']], ['class' => 'btn action-btn btn-info', 'escape' => false, 'target' => '_blank']) ?>
@@ -357,13 +358,13 @@ $religions = [
 
 </html>
 <script>
-    $("#level_id").change(function () {
+    $("#level_id").change(function() {
         getSectionAjax();
     });
-    $("#shift_id").change(function () {
+    $("#shift_id").change(function() {
         getSectionAjax();
     });
-    $("#session_id").change(function () {
+    $("#session_id").change(function() {
         getSectionAjax();
     });
 
@@ -382,7 +383,7 @@ $religions = [
                 "session_id": session_id,
                 "type": 'students'
             },
-            success: function (data) {
+            success: function(data) {
                 data = JSON.parse(data);
                 var text1 = '';
                 for (let i = 0; i < data.length; i++) {
